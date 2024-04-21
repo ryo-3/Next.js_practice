@@ -1,16 +1,11 @@
 // TodoItem.tsx
 import React from "react";
-import { Todo } from "@/types";
+import { TodoItemProps } from "@/models/interface";
+import useTodoSelectStyle from "@/hooks/useTodoSelectStyle";
 import "../css/style.css";
 
-interface TodoItemProps {
-  todo: Todo;
-  isSelected: boolean; // 選択状態
-  onSelect: () => void; // イベントハンドラを単純化
-}
-
 const TodoItem: React.FC<TodoItemProps> = ({ todo, isSelected, onSelect }) => {
-  const itemStyles = isSelected ? "bg-blue-100" : "";
+  const itemStyles = useTodoSelectStyle(isSelected);
 
   const handleClick = () => {
     console.log(`${todo.text} isSelected: ${isSelected}`); // IDと選択状態をログ出力
@@ -18,10 +13,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, isSelected, onSelect }) => {
   };
 
   return (
-    <li
-      className={`${itemStyles} cursor-pointer `}
-      onClick={handleClick}
-    >
+    <li className={`${itemStyles} ${isSelected} `} onClick={handleClick}>
       {todo.text}
     </li>
   );

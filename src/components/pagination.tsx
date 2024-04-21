@@ -2,8 +2,8 @@
 // ページ番号のリストを作成し、クリックすると特定のページ番号に対応するデータを表示するためにpaginate関数を呼び出している
 
 import React from "react";
+import "../css/style.css";
 
-// Paginationコンポーネントが受け取るpropsの型を定義
 interface PaginationProps {
   itemsPerPage: number;
   totalItems: number;
@@ -33,10 +33,10 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <nav
-      className="fixed bottom-1 left-0 right-0 flex justify-center items-center p-4 border-t border-black text-2xl"
+      className="fixed bottom-3 left-0 right-0 p-4 border-t border-black text-2xl "
       onClick={() => onNavClick && onNavClick()}
     >
-      <ul className="flex justify-center space-x-5">
+      <ul className="flex justify-center space-x-5 ">
         {pageNumbers.map((number) => (
           <li key={number} className="">
             <a
@@ -44,7 +44,7 @@ const Pagination: React.FC<PaginationProps> = ({
                 e.stopPropagation(); // navのクリックイベントを止める
                 paginate(number);
               }}
-              className="border-2 py-1 px-3 border-zinc-400 hover:border-slate-900"
+              className="border-2 py-1 px-3 border-zinc-400 hover:border-slate-900 "
             >
               {number}
             </a>
