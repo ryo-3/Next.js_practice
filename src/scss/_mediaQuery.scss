@@ -1,0 +1,35 @@
+
+/* ---------------------------------------
+
+           　メディアクエリ設定用
+
+-------------------------------------------*/
+$breakpoints: (
+    ss: 375px,
+    sp: 480px,
+    600: 600px,
+    md: 768px,
+    950: 950px,
+    tab: 1024px,
+    pc: 1200px
+);
+@mixin min($breakpoint){
+    @media (width >= #{map-get($breakpoints,$breakpoint)}){
+        @content;
+    }
+}
+@mixin max($breakpoint){
+    @media (width < #{map-get($breakpoints,$breakpoint)}){
+        @content;
+    }
+}
+@function fs($maxfs) {
+    $viewport: 1200;
+    $rate: 100 / $viewport;
+    $fsvw: round($maxfs * $rate * 1000) / 1000 * 1;
+    $minfs: $maxfs * 0.65;
+    @if $minfs < 14 {
+    $minfs: 14;
+    }
+    @return clamp(#{$minfs}px, #{$fsvw}vw, #{$maxfs}px);
+}

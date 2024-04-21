@@ -13,6 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        'sp': {'max': '480px'},  // 468px以下のデバイス用ブレイクポイントを追加
+        '600': {'max': '600px'}, 
+        'ss': {'max': '375px'}, 
+      },
+      width: {
+        '80vw': '80vw',
+      }
     },
   },
   plugins: [],

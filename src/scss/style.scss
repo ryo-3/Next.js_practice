@@ -1,0 +1,29 @@
+@use "mediaQuery" as *;
+
+// .list-width {
+//     position: fixed;
+//     top: 130px;
+//     width: 80vw;
+//     @include max(600){
+//         width: 90vw;
+//     }
+// }
+
+// .max {
+//     background-color: rgba(0, 0, 0, 0.1); // 視認性を高めるための背景色
+//     width: 100vw; // 全幅
+//     height: 100vw; // 全高
+//     position: relative; // 子要素の絶対位置を定義
+//   }
+
+.list_area {
+  position: fixed;
+  top: 120px;
+  width: 100vw; // 全幅
+//   padding-rig: 6%;
+//   height: 100vw; // 全高
+//   background-color: rgba(0, 0, 0, 0.1); // 視認性を高めるための背景色
+}
+.bg-blue-100 {
+//   background-color: #e7f1ff !important; /* 青色の薄い背景色 */
+}
