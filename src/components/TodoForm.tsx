@@ -34,7 +34,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
 
   // ボタンがクリックされたときに実行
   const handleSubmit = () => {
-    // addTodo 関数を呼び出し、現在の newTodo を渡した後、newTodo を空文字列にリセットします。
+    // addTodo 関数を呼び出し、現在の newTodo を渡した後、newTodo を空文字列にリセットします
     addTodo(newTodo);
     setNewTodo("");
   };
