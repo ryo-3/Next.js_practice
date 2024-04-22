@@ -6,7 +6,7 @@ import Pagination from "./pagination";
 import { v4 as uuidv4 } from "uuid";
 import ClearTodosButton from "@/components/ClearTodosButton";
 import SelectableTodoList from "./SelectableTodoList";
-import { Todo } from "@/types";
+import { Todo } from "@/models/interface";
 
 const TodoManager: React.FC = () => {
   const [todos, setTodos] = useLocalStorage<Todo[]>("todos", []);
@@ -36,7 +36,7 @@ const TodoManager: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <TodoForm addTodo={addTodo} />
       <SelectableTodoList
         todos={currentTodos}

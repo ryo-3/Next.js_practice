@@ -5,7 +5,9 @@
 
 -------------------------------------------*/
 .list_area {
-  position: fixed;
-  top: 120px;
-  width: 100vw;
+  width: 95%;
+}
+
+.Bg_blue {
+  background-color: #e7f1ff; /* 青色の薄い背景色 */
 }

@@ -1,13 +1,7 @@
 // SelectableTodoList.tsx
-import React, { useState } from "react";
+import React from "react";
 import TodoItem from "./TodoItem";
-import { Todo } from "@/types";
-
-interface SelectableTodoListProps {
-  todos: Todo[];
-  selectedId: string | null;
-  onTodoSelect: (id: string | null) => void;
-}
+import { SelectableTodoListProps } from "@/models/interface";
 
 const SelectableTodoList: React.FC<SelectableTodoListProps> = ({
   todos,
@@ -15,16 +9,14 @@ const SelectableTodoList: React.FC<SelectableTodoListProps> = ({
   onTodoSelect,
 }) => {
   return (
-    <div className="list_area px-4">
-      <ul>
+    <div className="fixed top-32 list_area mx-5">
+      <ul className="">
         {todos.map((todo) => (
           <TodoItem
             key={todo.id}
             todo={todo}
             isSelected={todo.id === selectedId}
-            onSelect={() =>
-              onTodoSelect(todo.id === selectedId ? null : todo.id)
-            }
+            onSelect={() => onTodoSelect(todo.id === selectedId ? null : todo.id)}
           />
         ))}
       </ul>
